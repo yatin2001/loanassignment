@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+  <title></title> 
+ <meta charset="utf-8" /> 
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <style> 
+   table { 
+     font-family: arial, sans-serif; 
+    border-collapse: collapse; 
+     width: 100%;  } 
+      td, th { 
+         border: 1px solid #dddddd; 
+         text-align: left; 
+         padding: 8px; 
+      }
+         tr:nth-child(even) {  background-color: #dddddd;}
+      
+          </style>
+           </head>
+           <body> 
+               <h1>List of customers </h1>
+             
+            <select name="myVar" [(ngModel)]="myVar" >
+                <option value="Manager">Manager</option>
+                <option value="Trainee">Trainee</option>
+               
+              </select>
+             
+              <div *ngFor='let employee of employees'>
+                  <h2 *ngIf="myVar===employee.occupation">
+                      {{employee.name}}
+                  </h2>
+              </div>
+              <hr>
+              <h1>{{title}}</h1>
+              <p>count value is{{count}}</p>
+              <button [disabled]="isDisabled" (click)="onClick()">Display</button>
+              <input type="text" name="value" [(ngModel)]="value" >
+              <h3>entered value is {{value}}</h3>
+              <hr>
+              <h1>Simple Interest Calculator</h1>
+              <label>Principle</label>
+              <input type="text" name="principle" [(ngModel)]="principle" >
+              <label>Amount</label>
+              <input type="text" name="amount" [(ngModel)]="amount" >
+              <label>Rate</label>
+              <input type="text" name="rate" [(ngModel)]="rate" >
+              <button (click)="onSI()" >RESULT</button>
+              <h3>Simple Interest is: {{SI}} </h3>
+
+
+              
+              
+    
+     
+  </body>
+  </html> 
+
